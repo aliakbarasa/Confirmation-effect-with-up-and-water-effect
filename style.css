@@ -1,0 +1,131 @@
+body {
+  background: #1c2e40;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  color: #fff;
+}
+
+.glass {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  height: 150px;
+  width: 150px;
+  border-radius: 50%;
+  background: #2c3e50;
+  overflow: hidden;
+  transform: translate(-50%, -50%);
+  border: 5px solid #2c3e50;
+  box-shadow: inset 0 0 50px rgba(255, 255, 255, 0.1);
+}
+
+.liquid {
+  content: "";
+  position: absolute;
+  background: #2980b9;
+  width: 150px;
+  height: 0px;
+  bottom: 0;
+  display: block;
+  border-top-right-radius: 50%;
+  background-clip: border-box;
+  animation: curve 7s forwards;
+}
+
+.bubble {
+  position: absolute;
+  width: 4px;
+  border-radius: 100%;
+  height: 4px;
+  top: 50%;
+  left: 30%;
+  background-color: #fff;
+  animation: bubbled 4s infinite;
+}
+.bubble + .bubble {
+  left: 20px;
+  top: 12px;
+  width: 15px;
+  height: 15px;
+  animation-duration: 3s;
+}
+
+.success {
+  width: 18px;
+  height: 55px;
+  position: absolute;
+  top: 30%;
+  left: 50%;
+  border: 3px solid white;
+  border-width: 0 3px 3px 0;
+  border-radius: 3px;
+  transform: rotate(45deg);
+}
+
+@keyframes curve {
+  0% {
+    border-top: 2px solid rgba(255, 255, 255, 0);
+    transform: rotate(-9deg);
+    height: 0px;
+    background-color: #ff0000;
+  }
+  15% {
+    border-top: 2px solid rgba(255, 255, 255, 0);
+    transform: rotate(9deg);
+    height: 15px;
+  }
+  25% {
+    border-top: 2px solid rgba(255, 255, 255, 0);
+    transform: rotate(9deg);
+    height: 20px;
+  }
+  30% {
+    border-top: 2px solid rgba(255, 255, 255, 0.4);
+    transform: rotate(-10deg);
+    height: 40px;
+  }
+  50% {
+    border-top: 2px solid rgba(255, 255, 255, 0.5);
+    transform: rotate(-5deg);
+    height: 70px;
+  }
+  75% {
+    border-top: 2px solid rgba(255, 255, 255, 0);
+    transform: rotate(-3deg);
+    height: 115px;
+  }
+  80% {
+    border-top: 2px solid rgba(255, 255, 255, 0);
+    transform: rotate(-10deg);
+    height: 130px;
+    background-color: #3300ff;
+  }
+  100% {
+    border-top: 2px solid rgba(255, 255, 255, 0.9);
+    transform: rotate(363deg);
+    height: 150px;
+    background-color: #00ff00;
+  }
+}
+@keyframes bubbled {
+  0% {
+    top: 80px;
+    background-color: rgba(255, 255, 255, 0.9);
+  }
+  100% {
+    top: 10px;
+    background-color: rgba(255, 255, 255, 0);
+  }
+}
+@keyframes updown {
+  0% {
+    transform: translateY(3px);
+  }
+  50% {
+    transform: translateY(-3px);
+  }
+  100% {
+    transform: translateY(3px);
+  }
+}
